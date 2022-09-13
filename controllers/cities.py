@@ -8,3 +8,9 @@ cities=[
 
 def index(req):
     return [c for c in cities], 200
+
+def create(req):
+    new_city=req.get_json()
+    new_city['id']=sorted([c['id'] for c in cities])[-1]+1
+    cities.append(new_city)
+    return new_city,201

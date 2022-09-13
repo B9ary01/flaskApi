@@ -24,6 +24,7 @@ def city():
 def city():
     fns={
         'GET': cities.index,
+        'POST':cities.create
       
     }
     resp , code=fns[request.method](request)
