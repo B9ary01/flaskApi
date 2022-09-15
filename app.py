@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from  werkzeug import exceptions
 from controllers import cities
@@ -6,9 +6,11 @@ from controllers import cities
 app=Flask(__name__)
 CORS(app)
 
-@app.route('/')
+
+
+@app.route('/', methods=["GET"])
 def welcome():
-    return "welcome to home page."
+    return render_template("index.html")
 
 '''
 @app.route('/mycities',methods=['GET','POST'])
