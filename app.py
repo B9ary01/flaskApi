@@ -22,8 +22,24 @@ def city():
         return "we have posted some cities",201
 '''
 
-@app.route('/cities',methods=['GET','POST'])
+
+@app.route('/cities', methods=["GET"])
 def city():
+    cities = [
+    {'id': 1, 'name': 'Pokhara', 'population': 360000, 'region': 'hill'},
+    {'id': 2, 'name': 'Dharan', 'population': 230000, 'region': 'terai'},
+    {'id': 3, 'name': 'Chitwan', 'population': 310000, 'region': 'terai'},
+    {'id': 4, 'name': 'Kathmandu', 'population': 3452000, 'region': 'hill'},
+    {'id': 5, 'name': 'Birgunj', 'population': 350000, 'region': 'terai'},
+    {'id': 6, 'name': 'Dadeldhura', 'population': 130000, 'region': 'terai'},
+    {'id': 7, 'name': 'Nepalgunj', 'population': 249000, 'region': 'terai'}
+
+]
+    return render_template("cities.html" ,page_title="list of cities",cities=cities)
+
+
+@app.route('/mycities',methods=['GET','POST'])
+def mycity():
     fns={
         'GET': cities.index,
         'POST':cities.create

@@ -1,0 +1,27 @@
+{% extends "default.html" %}
+{% block headers %} <script src="{{url_for('static', filename='scripts/cities.js')}}" defer></script> {% endblock headers %} 
+{% block title %} {{ page_title }}{% endblock title %}
+
+{% block heading %} Top Cities{% endblock heading%}
+
+{% block content %} 
+<p> Top 5 Tourist Destinations</p>
+
+<div class="city-bed">
+
+    {% for city in cities %}
+
+    <div class="city" style="border :3px solid {{city['colour']}}">
+<h2>{{ city["name"] }}
+    {% if city["region"] %}
+  <span > 🌧 </span>
+{% endif %}
+</h2>
+
+</div>
+
+
+{% endfor %}
+
+</div>
+{% endblock content %}
