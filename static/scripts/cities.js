@@ -1,6 +1,6 @@
 function toggleColour(event) {
     if (event.currentTarget.style.backgroundColor == event.currentTarget.style.borderColor) {
-        event.currentTarget.style.backgroundColor = "lightgrey";
+        event.currentTarget.style.backgroundColor = "yellow";
     } else {
         event.currentTarget.style.backgroundColor = event.currentTarget.style.borderColor;
     }

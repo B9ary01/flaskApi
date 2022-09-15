@@ -13,8 +13,10 @@
 
     <div class="city" style="border :3px solid {{city['colour']}}">
 <h2>{{ city["name"] }}
-    {% if city["region"] %}
-  <span > 🌧 </span>
+    {% if city["region"]=="hill" %}
+  <span > ⛰🏔️ </span>
+  {% elif city["region"]=="terai" %}
+  <span > ☀️ </span>
 {% endif %}
 </h2>
 
