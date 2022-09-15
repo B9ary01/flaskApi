@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify, render_template
-from flask_cors import CORS
+#from flask_cors import CORS
 from  werkzeug import exceptions
 from controllers import cities
 
 app=Flask(__name__)
-CORS(app)
+#CORS(app)
 
 
 
@@ -58,6 +58,18 @@ def cat_handler(city_id):
     }
     resp , code=fns[request.method](request, city_id)
     return jsonify(resp), code
+
+
+@app.route('/city/new', methods=["GET","POST"])
+def new_flower():
+    if request.method=="GET":
+        return "this is for post request"
+    else:
+        data=request.get_json()
+        if data["region"]!="invisible":
+            return "yes that is a flower",201
+        else:
+            return "absolutely not ",400
 
 if __name__ == '__main__':
    app.run(debug=True)

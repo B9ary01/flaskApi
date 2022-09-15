@@ -7,7 +7,11 @@ h1{
     box-shadow: inset 0 0 17px brown;
     padding: 1rem;
     color: lightseagreen;
+    text-align: center;
 
+}
+.mylist{
+    text-align: center;
 }
 
 .city-bed{
